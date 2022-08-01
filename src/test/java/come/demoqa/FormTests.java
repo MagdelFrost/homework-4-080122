@@ -18,6 +18,7 @@ public class FormTests {
         Configuration.browserPosition = "0x0";
     }
 
+    /**Тест на корректное формирование формы при заполнении обязательных полей*/
     @Test
     public void onlyRequiredFieldsTest() {
         open("automation-practice-form");
@@ -27,7 +28,7 @@ public class FormTests {
         $("#userEmail").setValue("johnmc55@gmail.com");
         $("#userNumber").setValue("8495956636");
         $("#genterWrapper").find(new ByText("Male")).click();
-        $("#dateOfBirthInput").clear();
+        $("#dateOfBirthInput").click();
         $("[class='react-datepicker__month-select']").selectOption(4);
         $("[class='react-datepicker__year-select']").selectOption("1955");
         $("[aria-label='Choose Monday, May 23rd, 1955']").click();
