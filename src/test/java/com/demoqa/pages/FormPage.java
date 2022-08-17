@@ -49,22 +49,15 @@ public class FormPage {
         return this;
     }
 
-    public FormPage fillHobbies(String hobbie) {
-        $("#hobbiesWrapper").find(new ByText(hobbie)).click();
-
-        return this;
-    }
-
     public FormPage fillAddress(String address) {
         $("#currentAddress").setValue(address);
 
         return this;
     }
 
-    public FormPage submit () {
+    public void submit () {
         $("#submit").click();
 
-        return this;
     }
 
     public FormPage fillForm(TestData testData) {
@@ -73,21 +66,18 @@ public class FormPage {
                 .fillNumber(testData.NUMBER)
                 .fillGender(testData.GENDER)
                 .fillDayOfBirth(testData)
-                .fillHobbies(testData.HOBBY)
                 .fillAddress(testData.ADDRESS)
                 .submit();
 
         return this;
     }
 
-    public FormPage checkForm(TestData testData) {
+    public void checkForm(TestData testData) {
         resultForm.assertFormParam("Student Name", testData.FIRST_NAME + " " + testData.LAST_NAME);
         resultForm.assertFormParam("Student Email", testData.EMAIL);
         resultForm.assertFormParam("Mobile", testData.NUMBER);
         resultForm.assertFormParam("Gender", testData.GENDER);
         resultForm.assertFormParam("Date of Birth", testData.updateDateOfBirth);
-        resultForm.assertFormParam("Hobbies", testData.HOBBY);
         resultForm.assertFormParam("Address", testData.ADDRESS);
-        return this;
     }
 }
