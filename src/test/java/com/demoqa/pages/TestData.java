@@ -17,7 +17,7 @@ public class TestData {
     protected final String FIRST_NAME = faker.name().firstName();
     protected final String LAST_NAME = faker.name().lastName();
     protected final String EMAIL = faker.internet().emailAddress();
-    ;
+
     protected final String NUMBER = faker.phoneNumber().subscriberNumber(10);
     protected final String GENDER = faker.demographic().sex();
     protected final String DATE_OF_BIRTH = fakeValuesService.regexify("(0[1-9]|1[0-2])\\.([0-2][1-9])\\.19([0-9]{2})");
